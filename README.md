@@ -47,7 +47,16 @@ TodoManager/
 ├── Services/    # Business Logic Layer
 └── Program.cs   # App bootstrap & middleware configuration
 ```
-## 🖼️ UI Snapshots (Small Images)**
+> 📌 **Note for Applying EF Migrations:**
+>
+> * In **Package Manager Console**, set the **Default Project** to `DAL` (the project where `DbContext` is defined).
+> * Then run:
+>
+> ```powershell
+> Update-Database
+> ```
+
+## 🖼️ UI Snapshots
 
 ![localhost_5173_auth](https://github.com/user-attachments/assets/161785d6-b6da-4755-9c38-a78924ffdb2b)
 ![localhost_5173_auth (1)](https://github.com/user-attachments/assets/d605d06d-627c-4e60-9fe1-e03071944bf3)
