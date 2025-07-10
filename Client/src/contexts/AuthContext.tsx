@@ -18,7 +18,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const useAuth = () => {
+export const useAuth = () => {  
   const context = useContext(AuthContext);
   if (!context) {
     throw new Error("useAuth must be used within an AuthProvider");
@@ -54,7 +54,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const loginMutation = useMutation({
     mutationFn: authApi.login,
     onSuccess: (data) => {
-      debugger
       setUser(data.user);
       queryClient.setQueryData(["auth", "me"], data.user);
       toast.success("Login successful!");

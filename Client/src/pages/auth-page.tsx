@@ -20,7 +20,6 @@ export default function AuthPage() {
   // Redirect if already authenticated
   useEffect(() => {
     if (user) {
-      debugger;
       setLocation("/");
     }
   }, [user, setLocation]);

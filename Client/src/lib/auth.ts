@@ -87,24 +87,7 @@ export const authApi = {
         let data = res.data as User;
 
         return data;
-    },
-
-    logout: async (): Promise<void> => {
-        const token = getToken();
-        if (token) {
-            try {
-                await fetch(apiRoutes.auth.logout, {
-                    method: "POST",
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
-            } catch (error) {
-                // Ignore logout errors, still remove token
-            }
-        }
-        removeToken();
-    },
+    }
 };
 
 // Authenticated fetch wrapper
